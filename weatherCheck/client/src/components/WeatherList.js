@@ -22,7 +22,13 @@ useEffect(() =>{
     }, [])
 
     return (
-        <div className ="w-75 mx-auto" >
+        <div className ="text-center w-100 mx-auto" style={{
+            backgroundColor: "#f9f9f9" ,
+
+            backgroundPosition: "center", 
+            margin: 30,
+            padding: 30
+        }}>
             <br></br>
             <h4>Let's check the weather of your favorite city!</h4>
                 <table className="table table-hover">

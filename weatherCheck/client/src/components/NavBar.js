@@ -33,9 +33,9 @@ const NavBar = (props) =>{
       }, [reloadBoolean])
     
     return (
-        <div className="w-75 mx-auto navbar navbar-light bg-light container-fluid">
+        <div className="w-100 mx-auto navbar navbar-light bg-light container-fluid">
 
-            <span className="display-5">Welcome, {currentUsername}! </span>
+            <span className="display-5" style={{width: "600px"}}>Welcome, {currentUsername}! </span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

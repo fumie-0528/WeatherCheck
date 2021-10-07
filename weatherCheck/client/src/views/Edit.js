@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
 import NavBar from '../components/NavBar';
-// import Form from '../components/Form';
+import sky from '../images/sky.jpg';
 
 const Edit = (props) => {
     const {users, locations, deleteLocationsFromList} = props;
     const [errors, setErrors] = useState({});
-    const [editedLocation, setEditedLocation] = useState({
+    const [oneLocation, setOneLocation] = useState({
         // city: "",
         // zipCode:""
     });
@@ -17,9 +17,9 @@ const Edit = (props) => {
                 console.log("1", res.data);
                 console.log("2", res.data.city);
                 console.log("2", res.data.zipCode);
-                setEditedLocation(res.data);
-                console.log(editedLocation);
-                // console.log(editedLocation.zipCode);
+                setOneLocation(res.data);
+                // console.log(oneLocation);
+                // console.log(oneLocation.zipCode);
             })
 
             .catch(err => {
@@ -30,15 +30,24 @@ const Edit = (props) => {
 
     const onChangeHandler = (e) =>{
         let newStateObject = {
-            ...editedLocation 
+            ...oneLocation 
         };
         newStateObject[e.target.name] = e.target.value;
-        setEditedLocation(newStateObject)
+        setOneLocation(newStateObject)
     }
+    // const onChangeHandlerZip = (e) =>{
+    //     let newStateObject = {
+    //         ...oneLocation.zipCode 
+    //     };
+    //     newStateObject[e.target.name] = e.target.value;
+    //     setOneLocation(newStateObject)
+    // }
+
 
 const editLocation = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8000/api/locations/${props.id}/edit`, editedLocation)  
+    console.log("inside edit location")
+    axios.put(`http://localhost:8000/api/locations/${props.id}/edit`, oneLocation)  
     .then((res) => {
         console.log(res)
         navigate('/home')
@@ -60,7 +69,13 @@ const deleteLocation = (locationId) => {
 }
 
 return(
-    <div className="mx-auto">
+    <div className="text-center w-75 mx-auto" style={{ 
+        backgroundImage: `url(${sky})`, 
+        backgroundRepeat: "no-repeat", 
+        backgroundPosition: "center", 
+        textAlign: "center",
+        margin: 30,
+        padding: 30}}>
     <NavBar />
     <div className="text-start w-50 mx-auto" >
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -69,23 +84,23 @@ return(
 
         <form className="mb-3 text-start" onSubmit={editLocation}>
         <label className="form-label">City: </label> 
-            <input type="text" value={editedLocation}  className="form-control" onChange={onChangeHandler}/>
-                {errors.editedLocation? 
-                <p>{errors.editedLocation.message}</p> 
+            <input type="text" value={oneLocation.city}  name="city" className="form-control" onChange={onChangeHandler}/>
+                {errors.oneLocation? 
+                <p>{errors.oneLocation.message}</p> 
                 :null
                 }
                 <br></br> 
             
             <label className="form-label">Zip Code: </label> 
-            <input type="number" value={editedLocation}  className="form-control" onChange={onChangeHandler} />
-                {errors.editedLocation?
-                <p>{errors.editedLocation.message}</p>
+            <input type="number" value={oneLocation.zipCode}  name="zipCode" className="form-control" onChange={onChangeHandler} />
+                {errors.oneLocation?
+                <p>{errors.oneLocation.message}</p>
                 :null
                 }
                 <br></br> 
             
             
-        <button onclick = {editLocation} type="button" className="btn btn-primary">Update </button>
+        <button type="submit" className="btn btn-primary">Update </button>&nbsp;&nbsp;&nbsp;
         <button onClick={(e)=>{deleteLocation(locations._id)}} type="button" className="btn btn-secondary">Delete</button>     
         </form>
         </div>

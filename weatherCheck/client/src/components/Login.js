@@ -41,8 +41,8 @@ const Login = (props) => {
   };
 
   return (
-    <div className="text-start" >
-      <h2>Login</h2>
+    <div className="text-start w-50 mx-auto" style={{color:"white"}}>
+      <h2 >Login</h2>
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
       <form onSubmit={login}>
         <div className="mb-3">

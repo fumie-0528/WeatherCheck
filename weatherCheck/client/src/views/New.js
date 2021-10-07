@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 import NavBar from '../components/NavBar';
-import Form from '../components/Form';
+import sky from '../images/sky.jpg';
 
 const New = (props) =>{
     const {users, locations} = props;
@@ -61,7 +61,13 @@ const New = (props) =>{
         // </div>
 
 
-        <div className="text-center w-75 mx-auto" >
+        <div className="text-center w-75 mx-auto" style={{ 
+            backgroundImage: `url(${sky})`, 
+            backgroundRepeat: "no-repeat", 
+            backgroundPosition: "center", 
+            textAlign: "center",
+            margin: 30,
+            padding: 30}} >
         <NavBar users={users}/>
         <div className="text-start w-75 mx-auto">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   

@@ -1,23 +1,26 @@
 import React from "react";
 import Login from "../components/Login";
 import Registration from "../components/Registration";
-import sky from '../images/sky.jpg';
+import beach from '../images/beach.jpg';
 
 const LogRegi = (props) => {
     const {reloadBoolean, setReloadBoolean} = props;
     return (
         <div style={{ 
-            backgroundImage: `url(${sky})`, 
-            backgroundRepeat: "noRepeat", 
+            backgroundImage: `url(${beach})`, 
+            backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
             textAlign: "center",
             margin: 30,
             padding: 30
 
         }}>
+            <h1 style={{color:"white"}}> Welcome to weather check</h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             <Login setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
             <Registration />
         </div>
     );

@@ -10,7 +10,7 @@ module.exports.findAllLocations = (req, res) => {
         res.status(400).json(err)});
       }
 
-module.exports.findAllCartoonsByUser = (req, res)=>{
+module.exports.findAllLocationsByUser = (req, res)=>{
 
   Location.find({user_id: req.params.id})
   .then((allUserLocations)=>{

@@ -55,7 +55,7 @@ const Registration = props => {
   };
 
   return (
-    <div className="text-start">
+    <div className="text-start w-50 mx-auto" style={{color:"white"}}>
       <h2>Register</h2>
       {
         confirmReg ? 
