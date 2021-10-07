@@ -19,6 +19,7 @@ const NavBar = (props) =>{
             console.log(res.data);
             setCurrentUserId("");
             localStorage.removeItem("userId"); 
+            localStorage.removeItem("currentUsername");
             navigate("/");
           })
           .catch(err => {

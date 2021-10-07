@@ -11,16 +11,6 @@ const Detail = (props) => {
     const [state, setState] = useState(0);
     const [weather, setWeather] = useState({});
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:8000/api/locations/" + locations.id)
-    //         .then(res => {
-    //             console.log(res.data);
-    //             setCity(res.data)
-    //             setZipCode(res.data)
-    //         })
-    //         .catch(err => console.log(err))  
-    // }, [])
-
         useEffect(() => {
             console.log(users);
         axios.get("http://localhost:8000/api/locations/"+ props.id)
@@ -71,7 +61,7 @@ const Detail = (props) => {
 
                             <table className="table table-stripe">
                             <tbody>
-                            <tr><td>Weather:</td> <td>{weather?.weather?.[0].main}</td></tr>
+                            <tr><td>Weather:</td> <td>{weather?.weather?.[0].main} </td></tr>
                             <tr><td>Max Temperature:</td> <td>{weather?.main?.temp_max} F</td></tr>
                             <tr><td>Min Temperature:</td> <td>{weather?.main?.temp_min} F</td></tr>
                             <tr><td>Humidity:</td> <td>{weather?.main?.humidity} %</td></tr>
@@ -83,7 +73,7 @@ const Detail = (props) => {
                 <div style={{ 
                             backgroundImage: `url("http://openweathermap.org/img/wn/${weather?.weather?.[0].icon}@2x.png")`,
                             backgroundRepeat: "no-repeat",
-                            width: "30%", 
+                            width: "20%", 
                             height: "300px",
                             padding: "20px",
                             margin: "20px"

@@ -16,9 +16,6 @@ const Login = (props) => {
         password: password,
       },
       {
-        // this will force the sending of the credentials / cookies so they can be updated
-        //    XMLHttpRequest from a different domain cannot set cookie values for their own domain 
-        //    unless withCredentials is set to true before making the request
         withCredentials: true,
       }
       )
@@ -26,9 +23,9 @@ const Login = (props) => {
         console.log(res.cookie, "cookie");
         console.log(res, "res");
         console.log(res.data, 'is res data!');
-        // setCurrentUsername(res.data.userLoggedIn);
         localStorage.setItem("currentUsername", res.data.userLoggedIn);
         localStorage.setItem("userId", res.data.userId); 
+    
         console.log(currentUsername);
         setReloadBoolean(!reloadBoolean);
         navigate("/home");

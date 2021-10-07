@@ -6,6 +6,6 @@ module.exports = app => {
     app.post("/api/locations", authenticate,locationController.createNewLocation);
     app.get("/api/locations/user/:id", locationController.findAllLocationsByUser);
     app.get("/api/locations/:id", locationController.findOneLocation);
-    app.put("/api/locations/:id/edit", locationController.updateExistingLocation);
+    app.put("/api/locations/:id/edit", authenticate,locationController.updateExistingLocation);
     app.delete("/api/locations/:id", locationController.deleteExistingLocation);
 }

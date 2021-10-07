@@ -59,7 +59,8 @@ module.exports = {
                     )
                     .json({
                         message:"Successfully Logged in",
-                        userLoggedIn: userRecord.username
+                        userLoggedIn: userRecord.username,
+                        userId: userRecord._id
                     })
                 }
                 

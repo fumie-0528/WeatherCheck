@@ -6,7 +6,7 @@ import axios from 'axios';
 const WeatherList = (props) => {
     const {users, locations} = props;
     const [locationList, setLocationList] = useState([]);
-    // const [locationUserName, setLocationUserName] = useState([]);
+
 
 useEffect(() =>{
         axios.get("http://localhost:8000/api/locations/")
@@ -14,7 +14,7 @@ useEffect(() =>{
             console.log("I am here");
             console.log(res.data.Locations);
             setLocationList(res.data.Locations);
-            // setLocationUserName(res.data.Users);
+
             console.log(locationList);
 
         })
@@ -38,6 +38,7 @@ useEffect(() =>{
                 <th>City</th>
                 <th>Zip Code</th>
                 <th>Actions Available</th>
+                <th></th>
                 </tr>
                 </thead>  
                 <tbody>
@@ -47,9 +48,15 @@ useEffect(() =>{
                     <td>{location.user_id.username}</td>
                     <td>{location.city}</td>
                     <td>{location.zipCode}</td>
-                    <td><button type="button" className="btn btn-success"><Link to={`/location/${location._id}/edit`}>Edit</Link></button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                    <button type="button" className="btn btn-info"><Link to={`/location/${location._id}`}>Detail</Link></button></td>
+                    <td>
+                    {
+                        localStorage.getItem("userId") === location.user_id._id?
+
+                    <button type="button" className="btn btn-success"><Link to={`/location/${location._id}/edit`}>Edit</Link></button>
+                        :null
+                }
+                    </td>
+                    <td><button type="button" className="btn btn-info"><Link to={`/location/${location._id}`}>Detail</Link></button></td>
 
                     </tr>
                 )})}

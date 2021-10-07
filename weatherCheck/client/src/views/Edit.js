@@ -47,17 +47,29 @@ const Edit = (props) => {
 const editLocation = (e) => {
     e.preventDefault();
     console.log("inside edit location")
-    axios.put(`http://localhost:8000/api/locations/${props.id}/edit`, oneLocation)  
+    axios.put(`http://localhost:8000/api/locations/${props.id}/edit`, oneLocation,
+    {
+        withCredentials:true
+    })  
     .then((res) => {
         console.log(res)
         navigate('/home')
     })
     .catch(err => {
         console.log(err.response)
-        setErrors(err.response.data.errors)})
+        if(err.response.status === 401){
+            navigate("/home");
+        }
+        if(err.response.data.errors){
+            setErrors(err.response.data.errors);
+        }
+
+    })
 }
 const deleteLocation = (locationId) => {
-    axios.delete(`http://localhost:8000/api/locations/${props.id}` )
+    axios.delete(`http://localhost:8000/api/locations/${props.id}` ,{
+        withCredentials:true
+    })
     .then(res => {
         deleteLocationsFromList(locations.id)
         navigate('/home')
@@ -85,21 +97,21 @@ return(
         <form className="mb-3 text-start" onSubmit={editLocation}>
         <label className="form-label">City: </label> 
             <input type="text" value={oneLocation.city}  name="city" className="form-control" onChange={onChangeHandler}/>
-                {errors.oneLocation? 
-                <p>{errors.oneLocation.message}</p> 
+                {errors.city? 
+                <p>{errors.city.message}</p> 
                 :null
                 }
                 <br></br> 
             
             <label className="form-label">Zip Code: </label> 
             <input type="number" value={oneLocation.zipCode}  name="zipCode" className="form-control" onChange={onChangeHandler} />
-                {errors.oneLocation?
-                <p>{errors.oneLocation.message}</p>
+                {errors.zipCode?
+                <p>{errors.zipCode.message}</p>
                 :null
                 }
                 <br></br> 
             
-            
+    
         <button type="submit" className="btn btn-primary">Update </button>&nbsp;&nbsp;&nbsp;
         <button onClick={(e)=>{deleteLocation(locations._id)}} type="button" className="btn btn-secondary">Delete</button>     
         </form>

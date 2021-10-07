@@ -6,7 +6,7 @@ import sky from '../images/sky.jpg';
 
 const Main = (props) =>{
     const {users, locations, reloadBoolean, setReloadBoolean} = props;
-    // const [loaded, setLoaded] = useState(false);
+
     
 
     return (
@@ -20,7 +20,6 @@ const Main = (props) =>{
 
         }}>
             <NavBar users={users} setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}/>
-            {/* { loaded &&<WeatherList locations={locations} users={users}/>} */}
             <WeatherList locations={locations} users={users}/>
 
         </div>
