@@ -9,11 +9,11 @@ const LogRegi = (props) => {
         <div style={{ 
             backgroundImage: `url(${beach})`, 
             backgroundRepeat: "no-repeat", 
-            backgroundPosition: "center", 
-            height: "100vh",
+            backgroundPosition: "relative", 
+            minHeight: "100vh",
             backgroundSize: "cover",
             textAlign: "center",
-            margin: 30,
+            
             
 
         }}>

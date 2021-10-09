@@ -25,7 +25,8 @@ useEffect(() =>{
         
         <div className ="mx-auto w-75" style={{
             // backgroundColor: "#f9f9f9" ,
-            height: "100vh",
+            width: "100%",
+            minHeight: "100vh",
             backgroundSize: "cover",
             backgroundPosition: "center", 
 
