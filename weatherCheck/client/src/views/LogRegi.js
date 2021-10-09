@@ -10,9 +10,11 @@ const LogRegi = (props) => {
             backgroundImage: `url(${beach})`, 
             backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
+            height: "100vh",
+            backgroundSize: "cover",
             textAlign: "center",
             margin: 30,
-            padding: 30
+            
 
         }}>
             <h1 style={{color:"white"}}> Welcome to weather check</h1>

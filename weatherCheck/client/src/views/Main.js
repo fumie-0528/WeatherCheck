@@ -10,18 +10,17 @@ const Main = (props) =>{
     
 
     return (
-        <div className="text-center w-75" style={{ 
+        <div style={{ 
             backgroundImage: `url(${sky})`, 
+            height: "100vh",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
             textAlign: "center",
-            margin: 30,
-            padding: 30
 
         }}>
             <NavBar users={users} setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}/>
             <WeatherList locations={locations} users={users}/>
-
         </div>
     )
 }

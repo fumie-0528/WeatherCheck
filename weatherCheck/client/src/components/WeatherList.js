@@ -22,12 +22,13 @@ useEffect(() =>{
     }, [])
 
     return (
-        <div className ="text-center w-100 mx-auto" style={{
-            backgroundColor: "#f9f9f9" ,
-
+        
+        <div className ="mx-auto w-75" style={{
+            // backgroundColor: "#f9f9f9" ,
+            height: "100vh",
+            backgroundSize: "cover",
             backgroundPosition: "center", 
-            margin: 30,
-            padding: 30
+
         }}>
             <br></br>
             <h4>Let's check the weather of your favorite city!</h4>
@@ -37,8 +38,8 @@ useEffect(() =>{
                 <th>User</th>
                 <th>City</th>
                 <th>Zip Code</th>
-                <th>Actions Available</th>
-                <th></th>
+                <th>Edit Location</th>
+                <th>Check Weather</th>
                 </tr>
                 </thead>  
                 <tbody>
@@ -56,7 +57,7 @@ useEffect(() =>{
                         :null
                 }
                     </td>
-                    <td><button type="button" className="btn btn-info"><Link to={`/location/${location._id}`}>Detail</Link></button></td>
+                    <td><button type="button" className="btn btn-warning"><Link to={`/location/${location._id}`}>Weather Check</Link></button></td>
 
                     </tr>
                 )})}

@@ -61,15 +61,16 @@ const New = (props) =>{
         // </div>
 
 
-        <div className="text-center w-75 mx-auto" style={{ 
+        <div className="text-center mx-auto" style={{ 
             backgroundImage: `url(${sky})`, 
             backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
             textAlign: "center",
-            margin: 30,
-            padding: 30}} >
+            height: "100vh",
+            backgroundSize: "cover",
+            }} >
         <NavBar users={users}/>
-        <div className="text-start w-75 mx-auto">
+        <div className="text-start w-50 mx-auto">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
         <h3>Enter your Favorite city and zip code:</h3>

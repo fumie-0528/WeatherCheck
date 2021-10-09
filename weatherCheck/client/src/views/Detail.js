@@ -40,45 +40,64 @@ const Detail = (props) => {
     
     
     return (
-        <div className= "w-75 mx-auto" style={{ 
+        <div>   
+            <NavBar /> 
+            <div className= "mx-auto" style={{ 
             backgroundImage: `url(${sky})`, 
             backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
-            margin: 30,
-            padding: 30}} >
-            <NavBar /> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-            <h2>Weather in {weather.name}, {oneLocation.zipCode}</h2>
-            <div style={{ display:"flex", flexDirection:"row" ,height:"90%", width: "100%", justifyContent: "space-around"}}>
-                <div style={{
-                        width: "80%", 
-                        height: "100%",
-                        padding: "20px",
-                        margin: "20px",
-                        border: "solid-black"
+            height: "100vh",
+            backgroundSize: "cover",
+
+            }} >
+            <div className="w-75 mx-auto">
+                <br/>
+                <br/>
+                <h2>Weather in {weather.name}, {oneLocation.zipCode}</h2>
+
+                <div style={{ display:"flex", 
+                            textAlign: "start",
+                            flexDirection: "row",
+                            height:"100px", width: "80%", 
+                            margin: "auto",
+                            padding: 10
+                            }}>
+                
+
+                    <div style={{ 
+                    backgroundImage: `url("http://openweathermap.org/img/wn/${weather?.weather?.[0].icon}@2x.png")`,
+                    width: "50%", 
+                    backgroundRepeat: "no-repeat",
+                    height: "100%",
+                    margin: "auto",
+                    marginTop: "30px"
                     }}>
 
-                            <table className="table table-stripe">
-                            <tbody>
-                            <tr><td>Weather:</td> <td>{weather?.weather?.[0].main} </td></tr>
-                            <tr><td>Max Temperature:</td> <td>{weather?.main?.temp_max} F</td></tr>
-                            <tr><td>Min Temperature:</td> <td>{weather?.main?.temp_min} F</td></tr>
-                            <tr><td>Humidity:</td> <td>{weather?.main?.humidity} %</td></tr>
-                            <tr><td>Sunrise:</td> <td>{(new Date(weather?.sys?.sunrise * 1000)).toLocaleTimeString()}</td></tr>
-                            <tr><td>Sunset:</td> <td>{(new Date(weather?.sys?.sunset * 1000)).toLocaleTimeString()   }</td></tr>
-                            </tbody>
-                            </table>
-                </div>
-                <div style={{ 
-                            backgroundImage: `url("http://openweathermap.org/img/wn/${weather?.weather?.[0].icon}@2x.png")`,
-                            backgroundRepeat: "no-repeat",
-                            width: "20%", 
-                            height: "300px",
+                    </div>
+        
+                        <div style={{
+                            width: "90%", 
+                            height: "100%",
                             padding: "20px",
-                            margin: "20px"
+                            margin: "20px",
+                            border: "solid-black"
                         }}>
-                        
+
+                        <table className="table table-stripe">
+                        <tbody>
+                        <tr><td>Weather:</td> <td>{weather?.weather?.[0].main} </td></tr>
+                        <tr><td>Max Temperature:</td> <td>{weather?.main?.temp_max} F</td></tr>
+                        <tr><td>Min Temperature:</td> <td>{weather?.main?.temp_min} F</td></tr>
+                        <tr><td>Humidity:</td> <td>{weather?.main?.humidity} %</td></tr>
+                        <tr><td>Sunrise:</td> <td>{(new Date(weather?.sys?.sunrise * 1000)).toLocaleTimeString()}</td></tr>
+                        <tr><td>Sunset:</td> <td>{(new Date(weather?.sys?.sunset * 1000)).toLocaleTimeString()   }</td></tr>
+                        </tbody>
+                        </table>
+
+                    </div>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>

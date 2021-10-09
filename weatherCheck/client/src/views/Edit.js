@@ -81,13 +81,14 @@ const deleteLocation = (locationId) => {
 }
 
 return(
-    <div className="text-center w-75 mx-auto" style={{ 
+    <div className="text-center mx-auto" style={{ 
         backgroundImage: `url(${sky})`, 
         backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover",
+        height: "100vh",
         backgroundPosition: "center", 
         textAlign: "center",
-        margin: 30,
-        padding: 30}}>
+        margin: 30}}>
     <NavBar />
     <div className="text-start w-50 mx-auto" >
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,7 +114,7 @@ return(
             
     
         <button type="submit" className="btn btn-primary">Update </button>&nbsp;&nbsp;&nbsp;
-        <button onClick={(e)=>{deleteLocation(locations._id)}} type="button" className="btn btn-secondary">Delete</button>     
+        <button onClick={(e)=>{deleteLocation(locations._id)}} type="button" className="btn btn-danger">Delete</button>     
         </form>
         </div>
     </div>

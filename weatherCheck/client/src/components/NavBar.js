@@ -34,15 +34,15 @@ const NavBar = (props) =>{
       }, [reloadBoolean])
     
     return (
-        <div className="w-100 mx-auto navbar navbar-light bg-light container-fluid">
-
-            <span className="display-5" style={{width: "600px"}}>Welcome, {currentUsername}! </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-            <Link to="/home">Home</Link> |
-            <nobr onClick={logout}><Link to="/">Log Out</Link></nobr>
+        <div className="w-100 mx-auto navbar navbar-light bg-light container-fluid"
+        style={{display: "flex", justifyContent: "space-between"}}>
+            <div>
+              <span className="display-5" style={{width: "600px"}}>Welcome, {currentUsername}! </span>
+            </div>
+            <div>
+              <Link to="/home">Home</Link> |
+              <nobr onClick={logout}><Link to="/">Log Out</Link></nobr>
+            </div>
         </div>
     )
 }
