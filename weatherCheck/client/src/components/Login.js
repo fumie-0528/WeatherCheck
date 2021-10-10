@@ -33,6 +33,7 @@ const Login = (props) => {
       })
       .catch(err => {
         console.log(err.res);
+        console.log(err.res.data);
         setErrorMessage(err.res.data.message);
       });
   };

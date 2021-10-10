@@ -67,7 +67,7 @@ const Registration = props => {
           <label>Username</label>
           {
             errs.username ? 
-              <span className="error-text">{ errs.username.message }</span>
+              <span className="error-text" style={{color: "red"}}>{ errs.username.message }</span>
               : null
           }
           <input className="form-control"
@@ -81,7 +81,7 @@ const Registration = props => {
           <label>Email</label>
           {
             errs.email? 
-              <span className="error-text">{ errs.email.message }</span>
+              <span className="error-text" style={{color: "red"}}>{ errs.email.message }</span>
               : null
           }
           <input className="form-control"
@@ -95,7 +95,7 @@ const Registration = props => {
           <label>Password</label>
           {
             errs.password ? 
-              <span className="error-text">{ errs.password.message }</span>
+              <span className="error-text" style={{color: "red"}}>{ errs.password.message }</span>
               : null
           }
           <input className="form-control"
@@ -109,7 +109,7 @@ const Registration = props => {
           <label>Confirm Password</label>
           {
             errs.confirmPassword? 
-              <span className="error-text">{ errs.confirmPassword.message }</span>
+              <span className="error-text" style={{color: "red"}}>{ errs.confirmPassword.message }</span>
               : null
           }
           <input className="form-control"
