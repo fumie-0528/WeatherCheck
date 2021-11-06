@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
 import NavBar from '../components/NavBar';
-import sky from '../images/sky.jpg';
+import blueSky from '../images/blueSky.jpg';
 
 const Edit = (props) => {
     const {users, locations, deleteLocationsFromList} = props;
@@ -82,7 +82,7 @@ const deleteLocation = (locationId) => {
 
 return(
     <div className="text-center mx-auto" style={{ 
-        backgroundImage: `url(${sky})`, 
+        backgroundImage: `url(${blueSky})`, 
         backgroundRepeat: "no-repeat", 
         backgroundSize: "cover",
         height: "100vh",
@@ -90,9 +90,10 @@ return(
         textAlign: "center",
         margin: 30}}>
     <NavBar />
-    <div className="text-start w-50 mx-auto" >
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div className="text-start w-50 mx-auto" style={{color:"white"}}>
+        <br/>
+        <br/>
+        <br/>
         <h2 >Change your Location</h2>
 
         <form className="mb-3 text-start" onSubmit={editLocation}>

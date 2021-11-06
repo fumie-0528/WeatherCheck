@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 import NavBar from '../components/NavBar';
-import sky from '../images/sky.jpg';
+import blueSky from '../images/blueSky.jpg';
 
 const New = (props) =>{
     const {users, locations} = props;
@@ -46,23 +46,8 @@ const New = (props) =>{
 
     
     return (
-        // <div className="text-start w-50 mx-auto" >
-        // <NavBar users={users}/>
-        // <h2 >Change your Location</h2>
-        // <Form
-        // newLocations = {newLocations}
-        // setNewLocations = {setNewLocations}
-        // errors = {errors}
-        // setErrors = {setErrors}
-        // users = {users}
-        // locations = {locations}
-        // submitHandler = {submitHandler}
-        // />
-        // </div>
-
-
         <div className="text-center mx-auto" style={{ 
-            backgroundImage: `url(${sky})`, 
+            backgroundImage: `url(${blueSky})`, 
             backgroundRepeat: "no-repeat", 
             backgroundPosition: "center", 
             textAlign: "center",
@@ -70,9 +55,11 @@ const New = (props) =>{
             backgroundSize: "cover",
             }} >
         <NavBar users={users}/>
-        <div className="text-start w-50 mx-auto">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        <div className="text-start w-50 mx-auto" style={{color:"white"}}>
+        <br/>
+        <br/>
+        <br/>
+
         <h3>Enter your Favorite city and zip code:</h3>
         <form onSubmit = {submitHandler} className="mb-3">
 
@@ -93,7 +80,8 @@ const New = (props) =>{
             <br></br> 
         <button type="submit" className="btn btn-primary">Register</button>
  </form>
-    </div></div> 
+    </div>
+    </div> 
     )
 }
 

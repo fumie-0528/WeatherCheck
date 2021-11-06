@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { navigate } from '@reach/router';
+import sky2 from '../images/sky2.jpg';
+import { Link, navigate } from '@reach/router';
+
 
 const Login = (props) => {
   const {reloadBoolean, setReloadBoolean} = props;
@@ -32,16 +34,33 @@ const Login = (props) => {
 
       })
       .catch(err => {
-        console.log(err.res);
-        console.log(err.res.data);
-        setErrorMessage(err.res.data.message);
+        console.log(err.response);
+        console.log(err.response.data);
+        setErrorMessage(err.response.data.message);
       });
   };
 
   return (
-    <div className="text-start w-50 mx-auto" style={{color:"white"}}>
+    <div style={{ 
+      backgroundImage: `url(${sky2})`, 
+      backgroundRepeat: "no-repeat", 
+      backgroundPosition: "relative", 
+      minHeight: "100vh",
+      backgroundSize: "cover",
+      textAlign: "center",
+
+  }}>
+    <div className="header">
+        <br/>
+        <h2>Welcome to Weather Check</h2>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div className="logregi"> 
+      <div className="text-start w-50 mx-auto">
       <h2 >Login</h2>
-      <p className="error-text">{errorMessage ? errorMessage : ""}</p>
+      <p className="error-text" style={{color:"red"}}>{errorMessage ? errorMessage : ""}</p>
       <form onSubmit={login}>
         <div className="mb-3">
           <label for="inputPassword5" className="form-label">Email</label>
@@ -67,6 +86,9 @@ const Login = (props) => {
           >Sign In</button>
         </div>
       </form>
+      <p>Need to register? <Link to="/">Register</Link> </p>
+      </div>
+      </div>
     </div>
   );
 };

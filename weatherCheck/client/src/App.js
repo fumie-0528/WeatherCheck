@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useState } from 'react';
 import { Router } from '@reach/router'; 
 import Main from './views/Main';
@@ -5,6 +6,7 @@ import Edit from './views/Edit';
 import Detail from './views/Detail';
 import LogRegi from './views/LogRegi';
 import New from './views/New';
+import Login from './views/Login';
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -17,6 +19,7 @@ function App() {
     <div className="App">
       
       <Router>      
+        <Login path="/login" users={users} locations={locations} setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}></Login>
         <LogRegi path="/" users={users} locations={locations} setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}/>
         <Main path="/home" users={users} locations={locations} setReloadBoolean={setReloadBoolean} reloadBoolean={reloadBoolean}/>
         <Edit path="/location/:id/edit" 

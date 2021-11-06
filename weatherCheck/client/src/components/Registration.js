@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link, navigate } from '@reach/router';
 
 const Registration = props => {
   const [confirmReg, setConfirmReg] = useState("");
@@ -55,7 +56,7 @@ const Registration = props => {
   };
 
   return (
-    <div className="text-start w-50 mx-auto" style={{color:"white"}}>
+    <div className="text-start w-50 mx-auto">
       <h2>Register</h2>
       {
         confirmReg ? 
@@ -125,6 +126,7 @@ const Registration = props => {
           >Register Me</button>
         </div>
       </form>
+      <p>already registered? <Link to="/login">Login</Link> </p>
     </div>
   );
 };

@@ -24,16 +24,18 @@ useEffect(() =>{
     return (
         
         <div className ="mx-auto w-75" style={{
-            // backgroundColor: "#f9f9f9" ,
             width: "100%",
             minHeight: "100vh",
             backgroundSize: "cover",
             backgroundPosition: "center", 
+            color: "white"
 
         }}>
-            <br></br>
+            <br/>
             <h4>Let's check the weather of your favorite city!</h4>
-                <table className="table table-hover">
+                <br/>
+                <br/>
+                <table className="table table-hover" style={{color:"white"}}>
                 <thead>
                 <tr>
                 <th>User</th>

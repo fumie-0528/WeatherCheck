@@ -35,13 +35,14 @@ const NavBar = (props) =>{
     
     return (
         <div className="w-100 mx-auto navbar navbar-light bg-light container-fluid"
-        style={{display: "flex", justifyContent: "space-between"}}>
+        >
             <div>
-              <span className="display-5" style={{width: "600px"}}>Welcome, {currentUsername}! </span>
+              <h3 className="display-5" style={{width: "600px"}}>Welcome, {currentUsername}! </h3>
             </div>
             <div>
-              <Link to="/home">Home</Link> |
-              <nobr onClick={logout}><Link to="/">Log Out</Link></nobr>
+            <button type="button" class="btn btn-outline-warning"><Link to="/home">Home</Link></button> 
+            &nbsp;&nbsp;
+            <button onClick={logout} type="button" class="btn btn-outline-info"><Link to="/">Log Out</Link></button>
             </div>
         </div>
     )
